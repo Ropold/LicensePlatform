@@ -25,6 +25,11 @@ public class InvoiceController {
         return invoiceService.getAllInvoices();
     }
 
+    @GetMapping("/huhu")
+    public String huhu() {
+        return "Huhu from InvoiceController!";
+    }
+
     @GetMapping("/{id}")
     public InvoiceModel getInvoiceById(@PathVariable String id) {
         InvoiceModel invoice = invoiceService.getInvoiceById(id);
@@ -33,4 +38,5 @@ public class InvoiceController {
         }
         return invoice;
     }
+
 }
