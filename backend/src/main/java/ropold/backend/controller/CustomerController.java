@@ -1,0 +1,37 @@
+package ropold.backend.controller;
+
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import ropold.backend.exception.CustomerNotFoundException;
+import ropold.backend.model.CustomerModel;
+import ropold.backend.service.CloudinaryService;
+import ropold.backend.service.CustomerService;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/customers")
+@RequiredArgsConstructor
+public class CustomerController {
+
+    private final CustomerService customerService;
+    private final CloudinaryService cloudinaryService;
+
+    @GetMapping
+    public List<CustomerModel> getAllCustomers() {
+        return customerService.getAllCustomers();
+    }
+
+    @GetMapping("/{id}")
+    public CustomerModel getCustomerById(@PathVariable String id) {
+        CustomerModel customer = customerService.getCustomerById(id);
+        if (customer == null) {
+            throw new CustomerNotFoundException("No Customer found with id: " + id);
+        }
+        return customer;
+    }
+}
