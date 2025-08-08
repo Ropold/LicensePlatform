@@ -2,6 +2,7 @@ package ropold.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ropold.backend.exception.CustomerNotFoundException;
 import ropold.backend.model.CustomerModel;
 import ropold.backend.repository.CustomerRepository;
 
@@ -21,6 +22,6 @@ public class CustomerService {
 
     public CustomerModel getCustomerById(String id) {
         return customerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Customer not found"));
+                .orElseThrow(() -> new CustomerNotFoundException("Customer not found"));
     }
 }

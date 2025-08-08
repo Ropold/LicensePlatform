@@ -22,9 +22,8 @@ public class GlobalExceptionHandler {
             InvoiceNotFoundException.class,
             LicenseNotFoundException.class,
             ManufacturerNotFoundException.class,
-            ProductNotFoundException.class
+            UserNotFoundException.class,
     })
-
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ErrorResponse handleNotFoundException(RuntimeException e) {
         log.error("NotFoundException: {}", e.getMessage(), e);

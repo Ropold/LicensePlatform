@@ -2,6 +2,7 @@ package ropold.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ropold.backend.exception.InvoiceNotFoundException;
 import ropold.backend.model.InvoiceModel;
 import ropold.backend.repository.InvoiceRepository;
 
@@ -21,7 +22,7 @@ public class InvoiceService {
 
     public InvoiceModel getInvoiceById(String id) {
         return invoiceRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Invoice not found"));
+                .orElseThrow(() -> new InvoiceNotFoundException("Invoice not found"));
     }
 }
 
