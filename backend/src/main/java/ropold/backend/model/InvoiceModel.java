@@ -17,7 +17,7 @@ public class InvoiceModel {
         @GeneratedValue(strategy = GenerationType.UUID)
         private UUID id;
 
-        @Column(name = "invoice_number", unique = true, nullable = false)
+        @Column(name = "invoice_number")
         private String invoiceNumber;
 
         @Column(name = "customer_license_id", nullable = false)

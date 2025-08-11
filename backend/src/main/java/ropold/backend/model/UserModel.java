@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -40,8 +40,8 @@ public class UserModel {
         List<UUID> favoriteCustomers;
 
         @Column(name = "created_at", nullable = false)
-        Instant createdAt;
+        LocalDateTime createdAt;
 
         @Column(name = "last_login_at")
-        Instant lastLoginAt;
+        LocalDateTime lastLoginAt;
 }

@@ -18,11 +18,11 @@ public class LicenseModel {
         private UUID id;
 
         @Column(name = "name", nullable = false)
-        String name;
+        private String name;
 
         @Column(name = "manufacturer_id", nullable = false)
-        UUID manufacturerId;
+        private UUID manufacturerId;
 
         @Column(name = "license_type_id", nullable = false)
-        UUID licenseTypeId;
+        private UUID licenseTypeId;
 }
