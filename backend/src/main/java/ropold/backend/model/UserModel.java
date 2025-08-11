@@ -1,40 +1,47 @@
 package ropold.backend.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "users")
-public record UserModel(
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserModel {
         @Id
-        @GeneratedValue(generator = "UUID")
-        String id,
+        @GeneratedValue(strategy = GenerationType.UUID)
+        UUID id;
 
         @Column(name = "microsoft_id", unique = true, nullable = false)
-        String microsoftId,
+        String microsoftId;
 
         @Column(name = "username", nullable = false)
-        String username,
+        String username;
 
         @Column(name = "email", unique = true, nullable = false)
-        String email,
+        String email;
 
         @Column(name = "role", nullable = false)
-        String role,
+        String role;
 
         @Column(name = "avatar_url")
-        String avatarUrl,
+        String avatarUrl;
 
         @ElementCollection
         @CollectionTable(name = "user_customer_wishlist", joinColumns = @JoinColumn(name = "user_id"))
         @Column(name = "customer_id")
-        List<String> favoriteCustomers,
+        List<UUID> favoriteCustomers;
 
         @Column(name = "created_at", nullable = false)
-        Instant createdAt,
+        Instant createdAt;
 
         @Column(name = "last_login_at")
-        Instant lastLoginAt
-) {}
+        Instant lastLoginAt;
+}
