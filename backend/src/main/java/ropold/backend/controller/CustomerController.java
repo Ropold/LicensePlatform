@@ -12,6 +12,7 @@ import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.CustomerService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/customers")
@@ -27,7 +28,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id}")
-    public CustomerModel getCustomerById(@PathVariable String id) {
+    public CustomerModel getCustomerById(@PathVariable UUID id) {
         CustomerModel customer = customerService.getCustomerById(id);
         if (customer == null) {
             throw new CustomerNotFoundException("No Customer found with id: " + id);

@@ -11,6 +11,7 @@ import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.LicenseService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/licenses")
@@ -26,7 +27,7 @@ public class LicenseController {
     }
 
     @GetMapping("/{id}")
-    public LicenseModel getLicenseById(@PathVariable String id) {
+    public LicenseModel getLicenseById(@PathVariable UUID id) {
         LicenseModel license = licenseService.getLicenseById(id);
         if (license == null) {
             throw new LicenseNotFoundException("No License found with id: " + id);

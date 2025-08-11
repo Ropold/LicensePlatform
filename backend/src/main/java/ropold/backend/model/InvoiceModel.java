@@ -21,6 +21,6 @@ public class InvoiceModel {
         private String invoiceNumber;
 
         @Column(name = "customer_license_id", nullable = false)
-        private String customerLicenseId;
+        private UUID customerLicenseId;
 
 }

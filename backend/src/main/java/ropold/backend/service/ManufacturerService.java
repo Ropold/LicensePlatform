@@ -7,6 +7,7 @@ import ropold.backend.model.ManufacturerModel;
 import ropold.backend.repository.ManufacturerRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +21,7 @@ public class ManufacturerService {
         return manufacturerRepository.findAll();
     }
 
-    public ManufacturerModel getManufacturerById(String id) {
+    public ManufacturerModel getManufacturerById(UUID id) {
         return manufacturerRepository.findById(id)
                 .orElseThrow(() -> new ManufacturerNotFoundException("Manufacturer not found with id: " + id));
     }

@@ -7,6 +7,7 @@ import ropold.backend.model.CustomerModel;
 import ropold.backend.repository.CustomerRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +21,7 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
-    public CustomerModel getCustomerById(String id) {
+    public CustomerModel getCustomerById(UUID id) {
         return customerRepository.findById(id)
                 .orElseThrow(() -> new CustomerNotFoundException("Customer not found"));
     }

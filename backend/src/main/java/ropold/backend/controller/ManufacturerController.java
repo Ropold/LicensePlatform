@@ -11,6 +11,7 @@ import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.ManufacturerService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/manufacturers")
@@ -26,7 +27,7 @@ public class ManufacturerController {
     }
 
     @GetMapping("/{id}")
-    public ManufacturerModel getManufacturerById(@PathVariable String id) {
+    public ManufacturerModel getManufacturerById(@PathVariable UUID id) {
         ManufacturerModel manufacturer = manufacturerService.getManufacturerById(id);
         if (manufacturer == null) {
             throw new ManufacturerNotFoundException("No Manufacturer found with id: " + id);

@@ -7,6 +7,7 @@ import ropold.backend.model.LicenseModel;
 import ropold.backend.repository.LicenseRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +21,7 @@ public class LicenseService {
         return licenseRepository.findAll();
     }
 
-    public LicenseModel getLicenseById(String id) {
+    public LicenseModel getLicenseById(UUID id) {
         return licenseRepository.findById(id)
                 .orElseThrow(() -> new LicenseNotFoundException("License not found"));
     }
