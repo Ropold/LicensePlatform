@@ -12,6 +12,7 @@ import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.InvoiceService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/invoices")
@@ -32,18 +33,8 @@ public class InvoiceController {
         return "Huhu from InvoiceController!";
     }
 
-    @GetMapping("/test-db")
-    public String testDb() {
-        try {
-            long count = invoiceRepository.count();
-            return "DB Connection OK. Invoice count: " + count;
-        } catch (Exception e) {
-            return "DB Error: " + e.getMessage();
-        }
-    }
-
     @GetMapping("/{id}")
-    public InvoiceModel getInvoiceById(@PathVariable String id) {
+    public InvoiceModel getInvoiceById(@PathVariable UUID id) {
         InvoiceModel invoice = invoiceService.getInvoiceById(id);
         if (invoice == null) {
             throw new InvoiceNotFoundException("No Invoice found with id: " + id);

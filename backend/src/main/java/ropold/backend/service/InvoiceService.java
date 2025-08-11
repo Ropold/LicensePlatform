@@ -7,6 +7,7 @@ import ropold.backend.model.InvoiceModel;
 import ropold.backend.repository.InvoiceRepository;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +21,7 @@ public class InvoiceService {
         return invoiceRepository.findAll();
     }
 
-    public InvoiceModel getInvoiceById(String id) {
+    public InvoiceModel getInvoiceById(UUID id) {
         return invoiceRepository.findById(id)
                 .orElseThrow(() -> new InvoiceNotFoundException("Invoice not found"));
     }
