@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import ropold.backend.model.customer.CustomerLicenseModel;
+
 import java.util.UUID;
 
 @Entity
@@ -20,7 +22,7 @@ public class InvoiceModel {
         @Column(name = "invoice_number")
         private String invoiceNumber;
 
-        @Column(name = "customer_license_id", nullable = false)
-        private UUID customerLicenseId;
-
+        @ManyToOne(fetch = FetchType.EAGER)
+        @JoinColumn(name = "customer_license_id")
+        private CustomerLicenseModel customerLicense;
 }

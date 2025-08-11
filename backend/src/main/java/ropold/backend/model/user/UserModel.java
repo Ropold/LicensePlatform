@@ -1,4 +1,4 @@
-package ropold.backend.model;
+package ropold.backend.model.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

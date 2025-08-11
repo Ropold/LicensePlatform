@@ -3,7 +3,7 @@ package ropold.backend.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ropold.backend.exception.CustomerNotFoundException;
-import ropold.backend.model.CustomerModel;
+import ropold.backend.model.customer.CustomerModel;
 import ropold.backend.repository.CustomerRepository;
 
 import java.util.List;

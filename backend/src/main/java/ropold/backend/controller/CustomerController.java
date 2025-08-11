@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ropold.backend.exception.CustomerNotFoundException;
-import ropold.backend.model.CustomerModel;
+import ropold.backend.model.customer.CustomerModel;
 import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.CustomerService;
 

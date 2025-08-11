@@ -3,7 +3,7 @@ package ropold.backend.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ropold.backend.exception.UserNotFoundException;
-import ropold.backend.model.UserModel;
+import ropold.backend.model.user.UserModel;
 import ropold.backend.repository.UserRepository;
 
 @Service
