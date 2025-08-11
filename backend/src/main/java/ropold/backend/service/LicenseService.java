@@ -3,7 +3,7 @@ package ropold.backend.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ropold.backend.exception.LicenseNotFoundException;
-import ropold.backend.model.LicenseModel;
+import ropold.backend.model.license.LicenseModel;
 import ropold.backend.repository.LicenseRepository;
 
 import java.util.List;

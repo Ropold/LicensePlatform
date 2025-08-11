@@ -1,9 +1,10 @@
-package ropold.backend.model;
+package ropold.backend.model.license;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ropold.backend.model.ManufacturerModel;
 
 import java.util.UUID;
 
@@ -20,9 +21,11 @@ public class LicenseModel {
         @Column(name = "name", nullable = false)
         private String name;
 
-        @Column(name = "manufacturer_id", nullable = false)
-        private UUID manufacturerId;
+        @ManyToOne(fetch = FetchType.EAGER)
+        @JoinColumn(name = "manufacturer_id")
+        private ManufacturerModel manufacturer;
 
-        @Column(name = "license_type_id", nullable = false)
-        private UUID licenseTypeId;
+        @ManyToOne(fetch = FetchType.EAGER)
+        @JoinColumn(name = "license_type_id")
+        private LicenseTypeModel licenseType;
 }

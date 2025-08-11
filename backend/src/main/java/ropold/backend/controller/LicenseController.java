@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ropold.backend.exception.LicenseNotFoundException;
-import ropold.backend.model.LicenseModel;
+import ropold.backend.model.license.LicenseModel;
 import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.LicenseService;
 
