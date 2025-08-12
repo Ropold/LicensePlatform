@@ -23,6 +23,7 @@ public class GlobalExceptionHandler {
             LicenseNotFoundException.class,
             ManufacturerNotFoundException.class,
             UserNotFoundException.class,
+            CustomerLicenseNotFoundException.class,
     })
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public ErrorResponse handleNotFoundException(RuntimeException e) {

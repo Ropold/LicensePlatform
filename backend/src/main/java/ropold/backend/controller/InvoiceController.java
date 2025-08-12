@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ropold.backend.exception.InvoiceNotFoundException;
 import ropold.backend.model.InvoiceModel;
-import ropold.backend.repository.InvoiceRepository;
 import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.InvoiceService;
 
@@ -21,16 +20,10 @@ public class InvoiceController {
 
     private final InvoiceService invoiceService;
     private final CloudinaryService cloudinaryService;
-    private final InvoiceRepository invoiceRepository;
 
     @GetMapping
     public List<InvoiceModel> getAllInvoices() {
         return invoiceService.getAllInvoices();
-    }
-
-    @GetMapping("/huhu")
-    public String huhu() {
-        return "Huhu from InvoiceController!";
     }
 
     @GetMapping("/{id}")
