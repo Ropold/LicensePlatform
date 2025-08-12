@@ -6,13 +6,15 @@ import ropold.backend.exception.UserNotFoundException;
 import ropold.backend.model.user.UserModel;
 import ropold.backend.repository.UserRepository;
 
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class UserService {
 
     private final UserRepository userRepository;
 
-    public UserModel getUserById(String userId) {
+    public UserModel getUserById(UUID userId) {
         return userRepository.findById(userId)
                 .orElseThrow(() -> new UserNotFoundException("User not found"));
     }
