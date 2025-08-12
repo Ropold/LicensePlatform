@@ -2,6 +2,6 @@ package ropold.backend.model.license;
 
 public enum LicenseTypeEnum {
     SUBSCRIPTION,
-    PERMANENT,
+    PERPETUAL,
     CANCELLED
 }

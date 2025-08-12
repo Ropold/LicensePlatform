@@ -17,31 +17,31 @@ import java.util.UUID;
 public class UserModel {
         @Id
         @GeneratedValue(strategy = GenerationType.UUID)
-        UUID id;
+        private UUID id;
 
         @Column(name = "microsoft_id", unique = true, nullable = false)
-        String microsoftId;
+        private String microsoftId;
 
         @Column(name = "username", nullable = false)
-        String username;
+        private String username;
 
         @Column(name = "email", unique = true, nullable = false)
-        String email;
+        private String email;
 
-        @Column(name = "role", nullable = false)
-        String role;
+        @Column(name = "role", nullable = false, length = 50)
+        private String role;
 
         @Column(name = "avatar_url")
-        String avatarUrl;
+        private String avatarUrl;
 
         @ElementCollection
         @CollectionTable(name = "user_customer_wishlist", joinColumns = @JoinColumn(name = "user_id"))
         @Column(name = "customer_id")
-        List<UUID> favoriteCustomers;
+        private List<UUID> favoriteCustomers;
 
-        @Column(name = "created_at", nullable = false)
-        LocalDateTime createdAt;
+        @Column(name = "created_at", nullable = false, columnDefinition = "DATETIME2 DEFAULT GETDATE()")
+        private LocalDateTime createdAt;
 
-        @Column(name = "last_login_at")
-        LocalDateTime lastLoginAt;
+        @Column(name = "last_login_at", columnDefinition = "DATETIME2")
+        private LocalDateTime lastLoginAt;
 }

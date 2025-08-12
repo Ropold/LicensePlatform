@@ -18,6 +18,12 @@ public class CustomerModel {
         @GeneratedValue(strategy = GenerationType.UUID)
         private UUID id;
 
-        @Column(name = "name", nullable = false)
+        @Column(name = "name")
         private String name;
+
+        @Column(name = "contact_person")
+        private String contactPerson;
+
+        @Column(name = "notes", columnDefinition = "TEXT")
+        private String notes;
 }

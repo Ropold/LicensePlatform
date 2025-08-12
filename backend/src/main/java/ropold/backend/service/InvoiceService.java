@@ -3,7 +3,7 @@ package ropold.backend.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ropold.backend.exception.InvoiceNotFoundException;
-import ropold.backend.model.InvoiceModel;
+import ropold.backend.model.invoice.InvoiceModel;
 import ropold.backend.repository.InvoiceRepository;
 
 import java.util.List;

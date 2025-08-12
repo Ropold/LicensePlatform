@@ -1,7 +1,7 @@
 package ropold.backend.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ropold.backend.model.InvoiceModel;
+import ropold.backend.model.invoice.InvoiceModel;
 
 import java.util.UUID;
 

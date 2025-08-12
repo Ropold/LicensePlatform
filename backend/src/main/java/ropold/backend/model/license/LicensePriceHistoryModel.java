@@ -20,22 +20,34 @@ public class LicensePriceHistoryModel {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "year")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "license_id")
+    private LicenseModel license;
+
+    @Column(name = "year", nullable = false)
     private Integer year;
 
-    @Column(name = "purchase_price", precision = 10, scale = 2)
-    private BigDecimal purchasePrice;
+    @Column(name = "manufacturer_purchase_price", precision = 10, scale = 2)
+    private BigDecimal manufacturerPurchasePrice;
 
-    @Column(name = "sale_price", precision = 10, scale = 2)
-    private BigDecimal salePrice;
+    @Column(name = "manufacturer_discount_percent", precision = 5, scale = 2)
+    private BigDecimal manufacturerDiscountPercent;
+
+    @Column(name = "actual_purchase_price", precision = 10, scale = 2)
+    private BigDecimal actualPurchasePrice;
+
+    @Column(name = "standard_sale_price", precision = 10, scale = 2)
+    private BigDecimal standardSalePrice;
+
+    @Column(name = "customer_discount_percent", precision = 5, scale = 2)
+    private BigDecimal customerDiscountPercent;
+
+    @Column(name = "actual_sale_price", precision = 10, scale = 2)
+    private BigDecimal actualSalePrice;
 
     @Column(name = "price_change_percentage", precision = 5, scale = 2)
     private BigDecimal priceChangePercentage;
 
-    @Column(name = "created_at")
+    @Column(name = "created_at", nullable = false, columnDefinition = "DATETIME2 DEFAULT GETDATE()")
     private LocalDateTime createdAt;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "license_id")
-    private LicenseModel license;
 }
