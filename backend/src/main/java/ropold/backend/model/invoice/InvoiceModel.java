@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 import ropold.backend.model.customer.CustomerLicenseModel;
+import ropold.backend.model.customer.CustomerModel;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -24,6 +25,10 @@ public class InvoiceModel {
 
         @Column(name = "invoice_number", nullable = false, length = 100)
         private String invoiceNumber;
+
+        @ManyToOne(fetch = FetchType.EAGER)
+        @JoinColumn(name = "customer_id")
+        private CustomerModel customer;
 
         @ManyToOne(fetch = FetchType.EAGER)
         @JoinColumn(name = "customer_license_id")

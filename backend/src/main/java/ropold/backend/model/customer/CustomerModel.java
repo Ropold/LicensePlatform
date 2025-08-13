@@ -26,4 +26,7 @@ public class CustomerModel {
 
         @Column(name = "notes", columnDefinition = "TEXT")
         private String notes;
+
+        @Column(name = "image_url", length = 500)
+        private String imageUrl;
 }
