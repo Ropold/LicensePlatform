@@ -16,12 +16,12 @@ public class LicenseDependencyModel {
     @EmbeddedId
     private LicenseDependencyId id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("parentLicenseId")
     @JoinColumn(name = "parent_license_id")
     private LicenseModel parentLicense;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("dependentLicenseId")
     @JoinColumn(name = "dependent_license_id")
     private LicenseModel dependentLicense;

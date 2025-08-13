@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ropold.backend.exception.InvoiceNotFoundException;
+import ropold.backend.model.invoice.InvoiceBundleItemModel;
 import ropold.backend.model.invoice.InvoiceModel;
 import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.InvoiceService;
@@ -33,6 +34,20 @@ public class InvoiceController {
             throw new InvoiceNotFoundException("No Invoice found with id: " + id);
         }
         return invoice;
+    }
+
+    @GetMapping("/bundles")
+    public List<InvoiceBundleItemModel> getAllBundles() {
+        return invoiceService.getAllBundles();
+    }
+
+    @GetMapping("/bundles/{id}")
+    public InvoiceBundleItemModel getBundleById(@PathVariable UUID id) {
+        InvoiceBundleItemModel bundle = invoiceService.getBundleById(id);
+        if (bundle == null) {
+            throw new InvoiceNotFoundException("No Bundle found with id: " + id);
+        }
+        return bundle;
     }
 
 }

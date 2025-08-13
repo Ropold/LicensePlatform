@@ -16,12 +16,12 @@ public class UserCustomerWishlistModel {
     @EmbeddedId
     private UserCustomerWishlistId id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("userId")
     @JoinColumn(name = "user_id")
     private UserModel user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @MapsId("customerId")
     @JoinColumn(name = "customer_id")
     private CustomerModel customer;
