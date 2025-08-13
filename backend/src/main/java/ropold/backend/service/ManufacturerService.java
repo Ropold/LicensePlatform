@@ -2,7 +2,7 @@ package ropold.backend.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ropold.backend.exception.ManufacturerNotFoundException;
+import ropold.backend.exception.notfoundexceptions.ManufacturerNotFoundException;
 import ropold.backend.model.ManufacturerModel;
 import ropold.backend.repository.ManufacturerRepository;
 

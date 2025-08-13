@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ropold.backend.exception.ManufacturerNotFoundException;
+import ropold.backend.exception.notfoundexceptions.ManufacturerNotFoundException;
 import ropold.backend.model.ManufacturerModel;
 import ropold.backend.service.CloudinaryService;
 import ropold.backend.service.ManufacturerService;

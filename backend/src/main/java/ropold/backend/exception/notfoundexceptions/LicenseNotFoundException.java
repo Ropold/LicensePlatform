@@ -1,4 +1,4 @@
-package ropold.backend.exception;
+package ropold.backend.exception.notfoundexceptions;
 
 public class LicenseNotFoundException extends RuntimeException {
     public LicenseNotFoundException(String message) {

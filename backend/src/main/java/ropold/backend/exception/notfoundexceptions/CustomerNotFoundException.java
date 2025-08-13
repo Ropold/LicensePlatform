@@ -1,4 +1,4 @@
-package ropold.backend.exception;
+package ropold.backend.exception.notfoundexceptions;
 
 public class CustomerNotFoundException extends RuntimeException {
   public CustomerNotFoundException(String message) {
