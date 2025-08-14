@@ -69,9 +69,9 @@ public class SecurityConfig {
         return (userRequest) -> {
             OAuth2User githubUser = userService.loadUser(userRequest);
 
-            String githubId = String.valueOf(githubUser.getAttribute("id"));
+            String githubId = githubUser.getName();
             String username = githubUser.getAttribute("login");
-            String email = githubUser.getAttribute("email");
+//            String name = githubUser.getAttribute("name");
             String avatarUrl = githubUser.getAttribute("avatar_url");
 
             UserModel user = userRepository.findByMicrosoftId(githubId)
@@ -79,7 +79,6 @@ public class SecurityConfig {
                         UserModel newUser = new UserModel();
                         newUser.setMicrosoftId(githubId);
                         newUser.setUsername(username);
-                        newUser.setEmail(email);
                         newUser.setAvatarUrl(avatarUrl);
                         newUser.setRole("ROLE_USER");
                         newUser.setCreatedAt(LocalDateTime.now());
