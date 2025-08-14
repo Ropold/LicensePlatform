@@ -71,12 +71,13 @@ public class SecurityConfig {
 
             String githubId = githubUser.getName();
             String username = githubUser.getAttribute("login");
-//            String name = githubUser.getAttribute("name");
+//          String name = githubUser.getAttribute("name");
             String avatarUrl = githubUser.getAttribute("avatar_url");
 
             UserModel user = userRepository.findByMicrosoftId(githubId)
                     .orElseGet(() -> {
                         UserModel newUser = new UserModel();
+                        newUser.setId(idService.generateRandomId());
                         newUser.setMicrosoftId(githubId);
                         newUser.setUsername(username);
                         newUser.setAvatarUrl(avatarUrl);

@@ -16,7 +16,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class UserModel {
         @Id
-        @GeneratedValue(strategy = GenerationType.UUID)
         private UUID id;
 
         @Column(name = "microsoft_id", unique = true, nullable = false)
