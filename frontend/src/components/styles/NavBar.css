@@ -34,12 +34,12 @@
     background-color: #007bff;
 }
 
-#clickable-header-play {
-    background-color: #66bb6a;
+#clickable-header {
+    background-color: #66b3ff;
 }
 
-#clickable-header-play:hover {
-    background-color: #388e3c;
+#clickable-header:hover {
+    background-color: #007bff;
 }
 
 .header-title {

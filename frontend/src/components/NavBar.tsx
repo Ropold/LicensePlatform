@@ -38,20 +38,20 @@ export default function NavBar(props: Readonly<NavBarProps>) {
 
     return (
         <nav className="navbar">
-            <button className="button-group-button" onClick={() => navigate("/")}>Home</button>
+            <div
+                className="clickable-header"
+                id="clickable-header"
+                onClick={() => {
+                    navigate("/");
+                }}
+            >
+                <img src={headerLogo} alt="Bechtle Small Logo" className="logo-image" />
+                <h2 className="header-title">Home</h2>
+            </div>
 
             {props.user !== "anonymousUser" ? (
                 <>
-                    <div
-                        className="clickable-header"
-                        id="clickable-header-play"
-                        onClick={() => {
-                            navigate("/management");
-                        }}
-                    >
-                        <h2 className="header-title">Management</h2>
-                        <img src={headerLogo} alt="World Quartet Hub Logo" className="logo-image" />
-                    </div>
+                    <button className="button-group-button" onClick={() => navigate("/management")}>Management</button>
                     <button className="button-group-button" onClick={() => navigate("/profile")}>Profile</button>
                     <button className="button-group-button" onClick={logoutFromGithub}>Logout</button>
                 </>
