@@ -34,6 +34,9 @@ public class UserModel {
         @Column(name = "avatar_url")
         private String avatarUrl;
 
+        @Column(name = "preferred_language", length = 2, columnDefinition = "VARCHAR(2) DEFAULT 'DE'")
+        private String preferredLanguage;
+
         @ElementCollection
         @CollectionTable(name = "user_customer_wishlist", joinColumns = @JoinColumn(name = "user_id"))
         @Column(name = "customer_id")
