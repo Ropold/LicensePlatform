@@ -16,7 +16,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class LicenseModel {
         @Id
-        @GeneratedValue(strategy = GenerationType.UUID)
         private UUID id;
 
         @Column(name = "name", nullable = false)

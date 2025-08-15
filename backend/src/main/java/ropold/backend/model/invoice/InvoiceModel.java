@@ -20,7 +20,6 @@ import java.util.UUID;
 public class InvoiceModel {
 
         @Id
-        @GeneratedValue(strategy = GenerationType.UUID)
         private UUID id;
 
         @Column(name = "invoice_number", nullable = false, length = 100)
